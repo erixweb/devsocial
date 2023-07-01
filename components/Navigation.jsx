@@ -1,3 +1,5 @@
+import HomeIcon from "./Icons/HomeIcon.jsx";
+
 export default function Navigation () {
     return (
         <nav>
@@ -6,7 +8,7 @@ export default function Navigation () {
             </div>
             <div className="links">
                 <a href="/">
-                    Inicio
+                    <HomeIcon /> Inicio
                 </a>
             </div>
         </nav>

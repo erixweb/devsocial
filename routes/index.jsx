@@ -1,9 +1,11 @@
 import { Head } from "$fresh/runtime.ts";
 import Navigation from "../components/Navigation.jsx";
-import { useSignal } from "@preact/signals"
+import Recommended from "../components/Recommended.jsx";
 import FeedOptions from "../islands/FeedOptions.jsx";
+import { Store } from "@store"
 
 export default function HomePage() {
+  const store = Store.newPointer()
 
   return (
     <>
@@ -13,7 +15,8 @@ export default function HomePage() {
       </Head>
       <Navigation />
       <main>
-        <FeedOptions />
+        <FeedOptions store={store} />
+        <Recommended store={store} />
       </main>
     </>
   );

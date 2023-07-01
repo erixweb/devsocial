@@ -1,17 +1,21 @@
-import { signal } from "@preact/signals"
+import { useStore, Stores } from "@store"
 
+export default function FeedOptions (props) {
+    useStore("feed-recommended", {
+        pointer: props.store,
+    })
 
-export default function FeedOptions() {
-    const feedSection = signal("feed-recommended")
 
     const changeFeedSection = () => {
-        document.querySelector(`h3.${feedSection}`).classList.remove("highlight-feed")
-        if (feedSection.value === "feed-recommended") {
-            feedSection.value = "feed-followed"
-        } else {
-            feedSection.value = "feed-recommended"
+        const currentSection = Stores.get(props.store).state
+        document.querySelector(`h3.${currentSection}`).classList.remove("highlight-feed")
+
+        if (currentSection === "feed-recommended") {
+            Stores.get(props.store).set("feed-followed")
+        } else if (currentSection === "feed-followed") {
+            Stores.get(props.store).set("feed-recommended")
         }
-        document.querySelector(`h3.${feedSection}`).classList.add("highlight-feed")
+        document.querySelector(`h3.${Stores.get(props.store).state}`).classList.add("highlight-feed")
     }
 
     return (
