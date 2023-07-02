@@ -1,8 +1,8 @@
 import { Head } from "$fresh/runtime.ts";
 import Navigation from "../components/Navigation.jsx";
-import Recommended from "../components/Recommended.jsx";
+import Recommended from "../islands/Recommended.jsx";
 import FeedOptions from "../islands/FeedOptions.jsx";
-import { Store } from "@store"
+import { Store, Stores } from "@store"
 
 export default function HomePage() {
   const store = Store.newPointer()
