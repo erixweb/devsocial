@@ -4,7 +4,8 @@
 
 import * as $0 from "./routes/index.jsx";
 import * as $$0 from "./islands/FeedOptions.jsx";
-import * as $$1 from "./islands/Recommended.jsx";
+import * as $$1 from "./islands/LikeButton.jsx";
+import * as $$2 from "./islands/Recommended.jsx";
 
 const manifest = {
   routes: {
@@ -12,7 +13,8 @@ const manifest = {
   },
   islands: {
     "./islands/FeedOptions.jsx": $$0,
-    "./islands/Recommended.jsx": $$1,
+    "./islands/LikeButton.jsx": $$1,
+    "./islands/Recommended.jsx": $$2,
   },
   baseUrl: import.meta.url,
 };

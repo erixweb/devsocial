@@ -1,4 +1,8 @@
-export default function Card (props) {
+import LikeButton from "../islands/LikeButton.jsx"
+import ShareIcon from "./Icons/ShareIcon.jsx"
+import TextBubbleIcon from "./Icons/TextBubbleIcon.jsx"
+
+export default function Card(props) {
     const image = props.image
     const publisher = props.publisher
     const content = props.content
@@ -15,11 +19,12 @@ export default function Card (props) {
             </div>
             <img src={image} alt={`Imagen de ${publisher}`} />
             <div className="buttons">
+                <LikeButton />
                 <button>
-                    Like
+                    <TextBubbleIcon />
                 </button>
-                <button>
-                    Share
+                <button className="share">
+                    <ShareIcon />
                 </button>
             </div>
         </div>
